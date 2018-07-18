@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="AccountController">
+	<aura:attribute name="accounts" type="List" />
+        <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    	<aura:handler event="force:navigateToSObject" action="{!c.navigateToRecord}"/>
+        <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+          <thead>
+            <tr class="slds-text-heading_label">              
+              <th scope="col"><div class="slds-truncate" title="Name">Name</div></th>
+              <th scope="col"><div class="slds-truncate" title="Type">Type</div></th>                          
+              <th scope="col"><div class="slds-truncate" title="Phone">Phone</div></th>              
+            </tr>
+          </thead>
+          <tbody>
+            <aura:iteration items="{!v.accounts}" var="account" indexVar="index">
+                <tr>                   
+                    <td>
+                        <div class="slds-truncate" title="{!account.Name}">
+                        <a onclick="{!c.viewRecord}" style="width:100%;" data-index="{!index}">{!account.Name}</a>
+                        </div>
+                    </td>
+                    <td><div class="slds-truncate" title="{!account.Type}">{!account.Type}</div></td>                    
+                    <td><div class="slds-truncate" title="{!account.Phone}">{!account.Phone}</div></td>                    
+                </tr>
+            </aura:iteration>
+          </tbody>
+        </table>
+</aura:component>

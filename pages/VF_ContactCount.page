@@ -1,0 +1,12 @@
+<apex:page standardController="Account" extensions="VF_ContactCountController">
+    <div style="left: 96px;position: relative;">
+    <apex:pageBlock mode="maindetail">
+        <apex:pageBlockSection columns="1">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Contact Count</apex:outputLabel>
+                <apex:outputText >{!ContactCount}</apex:outputText> 
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>   
+    </div>
+</apex:page>

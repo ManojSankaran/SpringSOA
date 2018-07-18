@@ -1,3 +1,17 @@
+/*************************************************************************************
+** Project - Sprint SOA
+**************************************************************************************
+** Class Name : IntegrationResponse 
+** Description: Wrapper Class which will be used by HttpRequestClass.
+** Current Version: 1.0
+**------------------------------------------------------------------------------------
+**Modification Log: Added initial comments
+**------------------------------------------------------------------------------------
+**Developer                  Date              Version         Description
+**------------------------------------------------------------------------------------
+**Manoj Sankaran           18/07/2018            1.0             Created 
+
+**************************************************************************************/
 public class IntegrationResponse{
     public cls_args args;
     public cls_headers headers;

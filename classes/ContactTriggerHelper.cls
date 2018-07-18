@@ -1,8 +1,23 @@
+/*************************************************************************************
+** Project - Sprint SOA
+**************************************************************************************
+** Class Name : ContactTriggerHelper 
+** Description: Apex Class which will be used to update the contact count in account.
+** Current Version: 1.0
+**------------------------------------------------------------------------------------
+**Modification Log: Added initial comments
+**------------------------------------------------------------------------------------
+**Developer                  Date              Version         Description
+**------------------------------------------------------------------------------------
+**Manoj Sankaran           18/07/2018            1.0             Created 
+
+**************************************************************************************/
 public class ContactTriggerHelper{
     
     public static void CountContacts(string TriggerContext, List<contact> NewList, List<Contact> OldList, Map<id,contact> NewMap, Map<id,Contact> OldMap){
         Map<string,Integer> AccountContactMap = new Map<String,Integer>();
         Map<String,Integer> AccountContactUpdateMap = new Map<String,Integer>();
+        //Logic used to get the count of contact during insert and undelete of contact
         if(TriggerContext == 'Insert' || TriggerContext == 'undelete'){
             for(Contact con : NewList){
                 if(con.AccountId != Null){
@@ -15,7 +30,7 @@ public class ContactTriggerHelper{
                 }
             }
         }
-        
+        //Logic used to get the count of contact during update of contact
         if(TriggerContext == 'update'){
             for(Contact con : NewList){
                 if(con.AccountId != Null && con.AccountId != OldMap.get(con.id).AccountId){
@@ -37,7 +52,7 @@ public class ContactTriggerHelper{
             }
         }
         
-        
+        //logic used to get the count of contact during deletion of contact
         if(TriggerContext == 'delete'){
             for(Contact con : oldList){
                 if(con.AccountId != Null){

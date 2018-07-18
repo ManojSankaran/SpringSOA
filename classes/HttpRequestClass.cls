@@ -1,3 +1,18 @@
+/*************************************************************************************
+** Project - Sprint SOA
+**************************************************************************************
+** Class Name : HttpRequestClass 
+** Description: Apex Class which will be used by to hit the sample url provided and will 
+				parse the respone.
+** Current Version: 1.0
+**------------------------------------------------------------------------------------
+**Modification Log: Added initial comments
+**------------------------------------------------------------------------------------
+**Developer                  Date              Version         Description
+**------------------------------------------------------------------------------------
+**Manoj Sankaran           18/07/2018            1.0             Created 
+
+**************************************************************************************/
 public class HttpRequestClass{
 
   
